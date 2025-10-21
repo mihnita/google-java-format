@@ -61,17 +61,30 @@ public abstract class JavaFormatterOptions {
   /** Returns the code style. */
   public abstract Style style();
 
+  /** Returns the AOSP formatting options. */
+  public static JavaFormatterOptions aospOptions() {
+    return builder(Style.AOSP).build();
+  }
+
   /** Returns the default formatting options. */
   public static JavaFormatterOptions defaultOptions() {
     return builder().build();
   }
 
-  /** Returns a builder for {@link JavaFormatterOptions}. */
-  public static Builder builder() {
+  /** Returns a builder for {@link JavaFormatterOptions}.
+   *
+   * @param style the formatting style to use, Google or AOSP.
+   */
+  public static Builder builder(Style style) {
     return new AutoValue_JavaFormatterOptions.Builder()
-        .style(Style.GOOGLE)
+        .style(style)
         .formatJavadoc(true)
         .reorderModifiers(true);
+  }
+
+  /** Returns a builder for {@link JavaFormatterOptions}. */
+  public static Builder builder() {
+    return builder(Style.GOOGLE);
   }
 
   /** A builder for {@link JavaFormatterOptions}. */
