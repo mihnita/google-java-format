@@ -31,10 +31,10 @@ import org.eclipse.text.edits.TextEdit;
 public class JavaFormatterBase extends CodeFormatter {
 
   private static final int INDENTATION_SIZE = 2;
-  private final boolean aosp;
+  private final JavaFormatterOptions formatterOptions;
 
-  JavaFormatterBase(boolean aosp) {
-    this.aosp = aosp;
+  JavaFormatterBase(JavaFormatterOptions formatterOptions) {
+    this.formatterOptions = formatterOptions;
   }
 
   @Override
@@ -88,7 +88,7 @@ public class JavaFormatterBase extends CodeFormatter {
           throw new IllegalArgumentException(String.format("Unknown snippet kind: %d", kind));
       }
       List<Replacement> replacements =
-          new SnippetFormatter(aosp)
+          new SnippetFormatter(formatterOptions)
               .format(
                   snippetKind, source, rangesFromRegions(regions), initialIndent, includeComments);
       if (idempotent(source, regions, replacements)) {

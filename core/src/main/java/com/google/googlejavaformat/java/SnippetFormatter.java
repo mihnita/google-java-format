@@ -64,13 +64,11 @@ public class SnippetFormatter {
   private static final CharMatcher NOT_WHITESPACE = CharMatcher.whitespace().negate();
 
   public SnippetFormatter() {
-    this(false);
+    this(JavaFormatterOptions.defaultOptions());
   }
 
-  public SnippetFormatter(boolean aosp) {
-    formatter = aosp
-        ? new Formatter(JavaFormatterOptions.aospOptions())
-        : new Formatter();
+  public SnippetFormatter(JavaFormatterOptions formatterOptions) {
+    formatter = new Formatter(formatterOptions);
   }
 
   public String createIndentationString(int indentationLevel) {

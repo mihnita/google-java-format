@@ -17,6 +17,6 @@ package com.google.googlejavaformat.java;
 /** Runs the Google Java formatter on the given code. */
 public class GoogleJavaFormatter extends JavaFormatterBase {
   public GoogleJavaFormatter() {
-    super(false);
+    super(JavaFormatterOptions.defaultOptions());
   }
 }
