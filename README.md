@@ -90,11 +90,11 @@ to activate the plugin.
 
 The plugin adds two formatter implementations:
 
-* `google-java-format`: using 2 spaces indent
-* `aosp-java-format`: using 4 spaces indent
+*   `google-java-format`: using 2 spaces indent
+*   `aosp-java-format`: using 4 spaces indent
 
-These that can be selected in "Window" > "Preferences" > "Java" >
-"Code Style" > "Formatter" > "Formatter Implementation".
+These that can be selected in "Window" > "Preferences" > "Java" > "Code Style" >
+"Formatter" > "Formatter Implementation".
 
 #### Eclipse JRE Config
 
@@ -102,8 +102,8 @@ The plugin uses some internal classes that aren't available without extra
 configuration. To use the plugin, you will need to edit the
 [`eclipse.ini`](https://wiki.eclipse.org/Eclipse.ini) file.
 
-Open the `eclipse.ini` file in any editor and paste in these lines towards
-the end (but anywhere after `-vmargs` will do):
+Open the `eclipse.ini` file in any editor and paste in these lines towards the
+end (but anywhere after `-vmargs` will do):
 
 ```
 --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED

@@ -61,11 +61,6 @@ public abstract class JavaFormatterOptions {
   /** Returns the code style. */
   public abstract Style style();
 
-  /** Returns the AOSP formatting options. */
-  public static JavaFormatterOptions aospOptions() {
-    return builder().style(Style.AOSP).build();
-  }
-
   /** Returns the default formatting options. */
   public static JavaFormatterOptions defaultOptions() {
     return builder().build();
